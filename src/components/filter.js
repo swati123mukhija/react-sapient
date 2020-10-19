@@ -18,7 +18,6 @@ export default class Filter extends React.Component {
       this.setState({
         filterdata: this.props.find
       });
-      //this.dataFindout();
   }
   getLaunchYears () {
     let years = this.state.yearFilter.map(launch => launch.launch_year);
