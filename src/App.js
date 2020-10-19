@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-
+import List from './components/list';
+import withListLoading from './components/withListLoading';
 function App() {
+  const ListLoading = withListLoading(List);
+  const [appState, setAppState] = useState({
+    space: null,
+    loading: false
+  });
+  
+  useEffect(() => {
+    setAppState({ loading: true})
+    const fetchData = async () => {
+    const apiUrl = `https://api.spaceXdata.com/v3/launches?limit=100`;
+    fetch(apiUrl)
+      .then((res) => res.json())
+      .then((space) => {
+        setAppState({ loading: false, space: space});
+      });      
+}
+  fetchData();
+}, [setAppState]);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App repo-container'>
+        <ListLoading isLoading={appState.loading} space={appState.space}/>
     </div>
   );
 }
-
 export default App;

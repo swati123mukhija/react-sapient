@@ -1,16 +1,129 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root{
+  
+      display: flex;
+      justify-content: center;
+}
+.repo-container ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.repo-container{
+      background-color: #F2F2F2;
+      max-width: 1440px;
+      margin: 14px;
+}
+.repo-width{
+    margin-left: 191px;
+}
+.repo-text span{
+  color: #8995C3;
+}
+.repo-container ul li{
+    background: #fff;
+    border-radius: 2px;
+    max-width: 234px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.flexa .repo-text{
+      font-size: 14px;
+      display: -webkit-box;
+      margin: 10px 30px 10px 0px;
+      font-weight: bold;
+          line-height: 24px;
+}
+.text-color{
+  color:#484EA2;
+}
+.btn-red{
+    background-color: #f34f4f;
+    background: #f34f4f none repeat scroll 0 0;
+    border: 1px solid #f34f4f!important;
+    cursor: pointer;
+    width: 120px;
+    margin-left: 20px;
+    outline:none;
+}
+.btn{
+  color: #fff;
+    padding: 10px;
+    border-radius: 24px;
+}
+.flexa .formbg{
+  border-radius: 9px 8px 0px 0px;
+      background-color: #F2F2F2;
+      width: 157px;
+      margin-top: 15px;
+}
+.flexa{
+  margin-right: 10px;
+  border-radius: 5px;
+  flex: 0 1 25%;
+}
+.prel{
+  position: relative;
+}
+.mb40{
+  margin-bottom: 40px;
+}
+input {
+  width: 68%;
+height: 73px;
+margin-top: 11px;
+font-size: 20px;
+box-sizing: border-box;
+padding: 1.5rem;
+color: #fff;
+background: #3368B2;
+border: 1px solid #5E8FC8;
+outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: sans-serif;
+}
+
+h1{
+  font-size:20px;
+  text-align: left;
+  padding: 10px;
+}
+ul,li{
+  list-style-type: none;
+}
+.filter_style{
+  position: absolute;
+top: 85px;
+left: 87px;
+background: #fff;
+width: 229px;
+}
+.filter_year{
+  display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.filter_year ul{
+      margin-right: 47px;
+}
+.filter_year ul li{
+  flex: 0 0 30%;
+    flex-direction: inherit;
+    background-color: #7CBA00;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 8px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.filter_style span{
+  text-align: center;
+  border-bottom: 1px solid #000;
 }
 
 .App-header {
@@ -27,12 +140,60 @@
 .App-link {
   color: #61dafb;
 }
+.red{
+  color: red;
+}
+.bold{
+  font-weight: bold;
+}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 700px){
+  input{
+        width: 74%;
+        margin-top: 27px;
   }
-  to {
-    transform: rotate(360deg);
+  .filter_style{
+    position: inherit;
+  }
+  #root .repo-width{
+        margin-left: 0px;
+  }
+  .repo-container .repo-width{
+    margin-top: 54px;
+    position: absolute;
+    top: 2379px;
+    width: 231px;
+    background-color: #F2F2F2;
+  }
+  .flexa{
+        flex: 0 1 auto;
+  }
+  .filter_year{
+        background-color: #F2F2F2;
+  }
+  .repo-container{
+        width: 228px;
   }
 }
+@media only screen and (max-width: 1024px){
+  .repo-width{
+        margin-left: 201px;
+  }
+  .filter_style{
+    width: 227px;
+left: 27px;
+  }
+  .flexa .formbg{
+        width: 100px;
+  }
+  .flexa{
+    margin-right: 30px;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .repo-container .repo-width{
+        right: 17px;
+  }
+}
+
